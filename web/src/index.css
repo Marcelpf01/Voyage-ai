@@ -1,0 +1,255 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ───────────────────────────────────────────────────────────────
+   Voyage AI — Luxury travel design system
+   Aesthetic: warm ivory canvas, deep emerald ink, brushed brass accent.
+   All colors are HSL.
+   ─────────────────────────────────────────────────────────────── */
+
+@layer base {
+  :root {
+    --background: 40 33% 97%;
+    --foreground: 168 38% 9%;
+
+    --card: 40 40% 99%;
+    --card-foreground: 168 38% 9%;
+
+    --popover: 40 40% 99%;
+    --popover-foreground: 168 38% 9%;
+
+    /* Deep emerald-forest */
+    --primary: 168 44% 14%;
+    --primary-foreground: 40 40% 97%;
+
+    --secondary: 40 24% 93%;
+    --secondary-foreground: 168 38% 14%;
+
+    --muted: 40 20% 92%;
+    --muted-foreground: 168 12% 38%;
+
+    /* Brushed brass-gold */
+    --accent: 36 46% 56%;
+    --accent-foreground: 168 44% 12%;
+
+    --destructive: 4 64% 48%;
+    --destructive-foreground: 40 40% 97%;
+
+    --border: 40 18% 87%;
+    --input: 40 18% 87%;
+    --ring: 36 46% 56%;
+
+    --radius: 1.1rem;
+
+    --sidebar-background: 168 44% 12%;
+    --sidebar-foreground: 40 30% 88%;
+    --sidebar-primary: 36 46% 56%;
+    --sidebar-primary-foreground: 168 44% 10%;
+    --sidebar-accent: 168 38% 18%;
+    --sidebar-accent-foreground: 40 34% 94%;
+    --sidebar-border: 168 32% 20%;
+    --sidebar-ring: 36 46% 56%;
+  }
+
+  .dark {
+    --background: 168 38% 7%;
+    --foreground: 40 30% 94%;
+
+    --card: 168 36% 10%;
+    --card-foreground: 40 30% 94%;
+
+    --popover: 168 36% 10%;
+    --popover-foreground: 40 30% 94%;
+
+    --primary: 40 34% 94%;
+    --primary-foreground: 168 44% 10%;
+
+    --secondary: 168 26% 15%;
+    --secondary-foreground: 40 30% 94%;
+
+    --muted: 168 24% 14%;
+    --muted-foreground: 40 14% 64%;
+
+    --accent: 36 50% 60%;
+    --accent-foreground: 168 44% 10%;
+
+    --destructive: 4 62% 52%;
+    --destructive-foreground: 40 30% 96%;
+
+    --border: 168 22% 18%;
+    --input: 168 22% 18%;
+    --ring: 36 50% 60%;
+
+    --sidebar-background: 168 40% 6%;
+    --sidebar-foreground: 40 28% 86%;
+    --sidebar-primary: 36 50% 60%;
+    --sidebar-primary-foreground: 168 44% 8%;
+    --sidebar-accent: 168 30% 13%;
+    --sidebar-accent-foreground: 40 30% 92%;
+    --sidebar-border: 168 26% 15%;
+    --sidebar-ring: 36 50% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Inter", system-ui, sans-serif;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: "Fraunces", "Times New Roman", serif;
+    font-optical-sizing: auto;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: hsl(var(--accent) / 0.28);
+    color: hsl(var(--primary));
+  }
+
+  /* Refined scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--foreground) / 0.16);
+    border-radius: 999px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--foreground) / 0.28);
+    background-clip: content-box;
+  }
+}
+
+@layer components {
+  .glass {
+    background: hsl(var(--card) / 0.6);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid hsl(var(--foreground) / 0.08);
+  }
+
+  .glass-dark {
+    background: hsl(168 40% 8% / 0.55);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid hsl(40 40% 97% / 0.12);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gold-text {
+    background: linear-gradient(120deg, hsl(36 52% 62%), hsl(40 60% 78%), hsl(30 48% 52%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .luxe-shadow {
+    box-shadow:
+      0 1px 2px hsl(168 44% 10% / 0.04),
+      0 8px 24px -8px hsl(168 44% 10% / 0.12),
+      0 24px 48px -24px hsl(168 44% 10% / 0.16);
+  }
+
+  .luxe-shadow-lg {
+    box-shadow:
+      0 2px 4px hsl(168 44% 10% / 0.05),
+      0 16px 40px -12px hsl(168 44% 10% / 0.18),
+      0 40px 80px -32px hsl(168 44% 10% / 0.24);
+  }
+
+  .grain {
+    position: relative;
+  }
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+  }
+}
+
+@layer utilities {
+  .bg-aurora {
+    background:
+      radial-gradient(60% 50% at 15% 10%, hsl(36 46% 56% / 0.18), transparent 60%),
+      radial-gradient(50% 50% at 85% 20%, hsl(168 44% 30% / 0.22), transparent 60%),
+      radial-gradient(70% 60% at 50% 100%, hsl(36 46% 56% / 0.1), transparent 70%);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    background-size: 200% 100%;
+    animation: shimmer 2.4s linear infinite;
+  }
+
+  .animate-aurora {
+    animation: aurora 14s ease-in-out infinite alternate;
+  }
+
+  .animate-spin-slow {
+    animation: spin 24s linear infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes aurora {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(2%, -2%, 0) scale(1.08); }
+}
+
+/* Leaflet tweaks for luxe look */
+.leaflet-container {
+  font-family: "Inter", sans-serif;
+  background: hsl(var(--muted));
+}
+.leaflet-control-attribution {
+  font-size: 9px;
+  opacity: 0.6;
+}
+.leaflet-popup-content-wrapper {
+  border-radius: 14px;
+  box-shadow: 0 12px 32px -12px hsl(168 44% 10% / 0.4);
+}
+
+/* Print: clean itinerary export */
+@media print {
+  .no-print { display: none !important; }
+  body { background: #fff; }
+}
