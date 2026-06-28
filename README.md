@@ -19,17 +19,15 @@ Plan personalized trips in seconds using Generative AI, interactive maps, budget
 
 ---
 
-### 🌐 Live Demo
+> ## 🌐 Live Demo
 
-> https://voyage-ai.vercel.app
+https://voyage-aii.rork.app
 
 ### 💻 Portfolio
 
 > https://marcelpividal.dev
 
 ---
-
-<img src="./docs/hero.png" width="100%" />
 
 </div>
 
